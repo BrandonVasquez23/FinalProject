@@ -114,8 +114,8 @@
         const userInput = document.getElementById('userInput');
         const chatBox = document.getElementById('chatBox');
 
-        const fixedUserResponse = "placeholder.";
-        const fixedBotResponse = "ah yes a placeholder.";
+        const fixedUserResponse = "this is a placeholder.";
+        const fixedBotResponse = "ya i can tell -_-";
 
         userInput.addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
@@ -146,7 +146,7 @@
 
                     const botLabel = document.createElement('div');
                     botLabel.classList.add('sender');
-                    botLabel.innerText = 'Other';
+                    botLabel.innerText = 'Bot';
 
                     const botMessage = document.createElement('div');
                     botMessage.classList.add('message');
