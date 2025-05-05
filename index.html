@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interactive Narrative Chat</title>
     <!-- this is the bootstrap link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- this is the robotic text link ref -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
 
     <style>
-body {
-    background-image: url('Assets/img/pc.jpg'); /* replace with your actual path */
-    background-position: center center; /* center horizontally and vertically */
-    background-size: cover;             /* make it fill the screen */
-    background-repeat: no-repeat;       /* prevent tiling */
-    background-attachment: fixed;       /* optional: creates a parallax effect */
+        body {
+            background-image: url('Assets/img/pc.jpg');
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
 
-    color: #00ff00;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2rem;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+            color: #00ff00;
+            font-family: 'Press Start 2P';
+            font-size: 1.2rem;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
 
         .chat-container {
@@ -56,80 +58,80 @@ body {
             border: 2px solid #00ff00;
             border-radius: 5px;
             padding: 10px;
-            font-size: 1.2rem;
+            font-size: 1rem;
             width: 100%;
             outline: none;
         }
 
         .message-container {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-  max-width: 100%;
-}
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            max-width: 100%;
+        }
 
-.message-container.left {
-  align-items: flex-start;
-}
+        .message-container.left {
+            align-items: flex-start;
+        }
 
-.message-container.right {
-  align-items: flex-end;
-}
+        .message-container.right {
+            align-items: flex-end;
+        }
 
-.message {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1.2rem;
-  color: #00ffff; 
-  background-color: rgba(0, 255, 0, 0.1);
-  padding: 10px 15px;
-  border-radius: 12px;
-  max-width: 80%;           
-  word-wrap: break-word;    
-  white-space: normal;
-  overflow-wrap: break-word;
-  box-shadow: 0 0 10px rgba(0,255,0,0.2);
-}
+        .message {
+            font-family: 'Press Start 2P';
+            font-size: 1rem;
+            color: #00ffff;
+            background-color: rgba(0, 255, 0, 0.1);
+            padding: 10px 15px;
+            border-radius: 12px;
+            max-width: 80%;
+            word-wrap: break-word;
+            white-space: normal;
+            overflow-wrap: break-word;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+        }
 
-.message-container.left .message {
-  background-color: rgba(0, 255, 255, 0.1); 
-  align-self: flex-start;
-}
+        .message-container.left .message {
+            background-color: rgba(0, 255, 255, 0.1);
+            align-self: flex-start;
+        }
 
-.message-container.right .message {
-  background-color: rgba(0, 128, 255, 0.1); 
-  color: #00ccff; 
-  align-self: flex-end;
-}
+        .message-container.right .message {
+            background-color: rgba(0, 128, 255, 0.1);
+            color: #00ccff;
+            align-self: flex-end;
+        }
 
-.message-container.left .message::before {
-  content: "";
-  position: absolute;
-  left: -10px;
-  top: 10px;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-right: 10px solid rgba(0, 255, 255, 0.1);
-}
+        .message-container.left .message::before {
+            content: "";
+            position: absolute;
+            left: -10px;
+            top: 10px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-right: 10px solid rgba(0, 255, 255, 0.1);
+        }
 
-.message-container.right .message::before {
-  content: "";
-  position: absolute;
-  right: -10px;
-  top: 10px;
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-left: 10px solid rgba(0, 128, 255, 0.1); 
-}
+        .message-container.right .message::before {
+            content: "";
+            position: absolute;
+            right: -10px;
+            top: 10px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-left: 10px solid rgba(0, 128, 255, 0.1);
+        }
 
-.message {
-  position: relative;
-  display: inline-block;
-}
-
+        .message {
+            position: relative;
+            display: inline-block;
+        }
     </style>
 </head>
+
 <body>
     <div class="container-fluid">
         <div class="row">
@@ -148,15 +150,15 @@ body {
 
     <style>
         .word {
-          margin-right: 20px; /* <- word spacing */
-          display: inline-block;
+            margin-right: 20px;
+            display: inline-block;
         }
-      </style>
-      
-      <script>
+    </style>
+
+    <script>
         const userInput = document.getElementById('userInput');
         const chatBox = document.getElementById('chatBox');
-    
+
         // story
         const poemLines = [
             "I hear the stars whisper.",
@@ -168,78 +170,79 @@ body {
             "Our hearts beat in cosmic rhyme.",
             "Until dawn breaks the spell of time."
         ];
-    
+
         let currentLineIndex = 0;
-    
+
         async function typeWriterLettersByWord(text, container, letterSpeed = 50, wordPause = 200) {
             const words = text.split(" ");
             for (let w = 0; w < words.length; w++) {
                 const wordSpan = document.createElement('span');
                 wordSpan.classList.add('word');
                 container.appendChild(wordSpan);
-    
+
                 for (let l = 0; l < words[w].length; l++) {
                     wordSpan.innerText += words[w][l];
                     container.scrollIntoView({ behavior: 'smooth', block: 'end' });
                     await new Promise(resolve => setTimeout(resolve, letterSpeed));
                 }
-    
+
                 await new Promise(resolve => setTimeout(resolve, wordPause));
             }
         }
-    
+
         userInput.addEventListener('keypress', async function (e) {
             if (e.key === 'Enter' && userInput.value.trim() !== "") {
                 e.preventDefault();
-    
+
                 // user messages
                 if (currentLineIndex < poemLines.length) {
                     const userContainer = document.createElement('div');
                     userContainer.classList.add('message-container', 'right');
-    
+
                     const userLabel = document.createElement('div');
                     userLabel.classList.add('sender-label');
                     userLabel.innerText = 'You';
-    
+
                     const userMessage = document.createElement('div');
                     userMessage.classList.add('message');
-    
+
                     userContainer.appendChild(userLabel);
                     userContainer.appendChild(userMessage);
                     chatBox.appendChild(userContainer);
                     chatBox.scrollTop = chatBox.scrollHeight;
-    
+
                     await typeWriterLettersByWord(poemLines[currentLineIndex], userMessage, 50, 200);
                     currentLineIndex++;
                 }
-    
+
                 // bot messages
                 if (currentLineIndex < poemLines.length) {
                     setTimeout(async () => {
                         const botContainer = document.createElement('div');
                         botContainer.classList.add('message-container', 'left');
-    
+
                         const botLabel = document.createElement('div');
                         botLabel.classList.add('sender-label');
                         botLabel.innerText = 'Other';
-    
+
                         const botMessage = document.createElement('div');
                         botMessage.classList.add('message');
-    
+
                         botContainer.appendChild(botLabel);
                         botContainer.appendChild(botMessage);
                         chatBox.appendChild(botContainer);
                         chatBox.scrollTop = chatBox.scrollHeight;
-    
+
                         await typeWriterLettersByWord(poemLines[currentLineIndex], botMessage, 50, 200);
                         currentLineIndex++;
                     }, 500); // This is the delay
                 }
-    
+
                 userInput.value = '';
             }
         });
     </script>
-    
+
 </body>
+
 </html>
